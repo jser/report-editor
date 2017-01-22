@@ -1,0 +1,17 @@
+.DraftListContainer {
+}
+
+.DraftListContainer-header {
+    color: #f8f8f8;
+    background-color: #00B294;
+}
+
+.DraftListContainer-title {
+    font-size: 32px;
+    padding: .5rem 2rem;
+    margin: 0;
+}
+
+.DraftListContainer-list {
+    padding: .5rem 2rem;
+}

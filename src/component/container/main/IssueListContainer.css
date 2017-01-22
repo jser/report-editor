@@ -1,0 +1,16 @@
+.IssueListContainer {
+}
+
+.IssueListContainer-header {
+    color: #f8f8f8;
+    background-color: #0078d7;
+}
+.IssueListContainer-title {
+    font-size: 32px;
+    padding: .5rem 2rem;
+    margin: 0;
+}
+
+.IssueListContainer-list {
+    padding: .5rem 2rem;
+}

@@ -1,0 +1,81 @@
+{
+  "directories": {
+    "test": "test"
+  },
+  "author": "azu",
+  "license": "MIT",
+  "files": [
+    "bin/",
+    "lib/",
+    "src/"
+  ],
+  "name": "report-editor",
+  "version": "1.0.0",
+  "description": "jser.info report editor system.",
+  "main": "lib/report-editor.js",
+  "scripts": {
+    "test": "mocha test/",
+    "prepublish": "npm run --if-present build",
+    "start": "npm-run-all clean --parallel watch:css server",
+    "server": "NODE_ENV=development webpack-dev-server -d --hot --content-base ./public --open",
+    "build:js": "NODE_ENV=production webpack --progress -p",
+    "build:css": "postcss --config postcss.config.js",
+    "build": "npm-run-all clean --parallel build:*",
+    "watch:js": "NODE_ENV=development webpack -d --watch",
+    "watch:css": "chokidar --initial 'src/**/*.css' -c 'postcss --config postcss.config.js'",
+    "watch": "npm-run-all clean --parallel watch:*",
+    "clean": "rimraf public/build && mkdirp public/build"
+  },
+  "keywords": [
+    "jser"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jser/report-editor.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jser/report-editor/issues"
+  },
+  "homepage": "https://github.com/jser/report-editor",
+  "devDependencies": {
+    "autoprefixer": "^6.6.1",
+    "babel-cli": "^6.22.2",
+    "babel-loader": "^6.2.10",
+    "babel-plugin-transform-runtime": "^6.22.0",
+    "babel-preset-jsdoc-to-assert": "^4.0.0",
+    "babel-preset-latest": "^6.22.0",
+    "babel-preset-power-assert": "^1.0.0",
+    "babel-preset-react": "^6.22.0",
+    "babel-register": "^6.22.0",
+    "chokidar-cli": "^1.2.0",
+    "css-loader": "^0.26.1",
+    "json-loader": "^0.5.4",
+    "mkdirp": "^0.5.1",
+    "mocha": "^3.2.0",
+    "npm-run-all": "^4.0.1",
+    "postcss-calc": "^5.3.1",
+    "postcss-cli": "^2.6.0",
+    "postcss-custom-media": "^5.0.1",
+    "postcss-custom-properties": "^5.0.1",
+    "postcss-easy-import": "^2.0.0",
+    "postcss-reporter": "^3.0.0",
+    "power-assert": "^1.4.2",
+    "rimraf": "^2.5.4",
+    "style-loader": "^0.13.1",
+    "url-loader": "^0.5.7",
+    "webpack": "^2.0.0",
+    "webpack-dev-server": "^2.0.0"
+  },
+  "dependencies": {
+    "almin": "^0.9.1",
+    "classnames": "^2.2.5",
+    "github-api": "^3.0.0",
+    "lodash.omit": "^4.5.0",
+    "office-ui-fabric-react": "^1.2.2",
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2",
+    "react-sortable": "^1.2.0",
+    "react-sortable-hoc": "^0.4.9",
+    "suitcss-classnames": "^1.1.0"
+  }
+}

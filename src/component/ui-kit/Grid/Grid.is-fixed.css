@@ -1,0 +1,7 @@
+/*
+ Gridのfixed layout版
+ 固定幅じゃないと困る場合に利用する
+*/
+.Grid.is-fixed {
+  table-layout: fixed;
+}

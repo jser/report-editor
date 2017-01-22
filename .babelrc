@@ -1,0 +1,15 @@
+{
+  "presets": [
+    "latest",
+    "react"
+  ],
+  "plugins": ["transform-runtime"],
+  "env": {
+    "development": {
+      "presets": [
+        "jsdoc-to-assert",
+        "power-assert"
+      ]
+    }
+  }
+}
