@@ -4,6 +4,7 @@
 import swapDraftItemUseCase from "../../action/draft/swapDraftItemUseCase";
 import addItemToDraftUseCase from "../../action/draft/addItemToDraftUseCase";
 import removeItemFromDraftUseCase from "../../action/draft/removeItemFromDraftUseCase";
+import openOutputMarkdownUseCase from "../../action/draft/openOutputMarkdownUseCase";
 /**
  *
  * @param {App}app
@@ -27,9 +28,9 @@ export default function DraftReducer(app, payload) {
             app.draftToIssue(payload.draftItemIndex);
             return;
         }
-        case a:
-            app.draft.fillIssueWithComments(issue, comments);
-            return;
+        case openOutputMarkdownUseCase: {
+            app.createOutputContent();
+        }
         default:
             return state;
     }

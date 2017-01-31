@@ -1,6 +1,7 @@
 // MIT © 2017 azu
 "use strict";
 const React = require("react");
+const css = require("suitcss-classnames");
 import {Button, ButtonType} from "office-ui-fabric-react";
 // action
 import addItemToDraftUseCase from "../../../action/draft/addItemToDraftUseCase";
@@ -22,6 +23,7 @@ export default class IssueListContainer extends React.Component {
         });
         return <div className="IssueListContainer">
             <header className="IssueListContainer-header">
+
                 <h2 className="IssueListContainer-title">現在のIssue</h2>
             </header>
             <ul className="IssueListContainer-list">

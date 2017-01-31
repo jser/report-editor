@@ -6,12 +6,16 @@ import {Button, ButtonType} from "office-ui-fabric-react";
 import {SortableList, SortableItem} from '../../project/SortableList/SortableList';
 // action
 import swapDraftItemUseCase from "../../../action/draft/swapDraftItemUseCase";
+import openOutputMarkdown from "../../../action/draft/openOutputMarkdownUseCase";
 import removeItemFromDraftUseCase from "../../../action/draft/removeItemFromDraftUseCase";
 export default class DraftListContainer extends React.Component {
     constructor() {
         super();
         this.onSortEnd = ({oldIndex, newIndex}) => {
             swapDraftItemUseCase({oldIndex, newIndex});
+        };
+        this._onToggleCodeClick = () => {
+            openOutputMarkdown();
         };
     }
 
@@ -29,6 +33,12 @@ export default class DraftListContainer extends React.Component {
         return <div className="DraftListContainer">
             <header className="DraftListContainer-header">
                 <h2 className="DraftListContainer-title">ドラフト</h2>
+                <Button buttonType={ ButtonType.icon }
+                        icon='Embed'
+                        onClick={ this._onToggleCodeClick }
+                        className="DraftListContainer-expandButton">
+                    Show code
+                </Button>
             </header>
             <SortableList
                 className="DraftListContainer-list"

@@ -54,4 +54,8 @@ export default class Draft {
     swapItem({oldIndex, newIndex}) {
         this.items = arrayMove(this.items, oldIndex, newIndex);
     }
+
+    generateOutputContent() {
+        return this.items.map(item => item.title).join("\n");
+    }
 }
